@@ -1,0 +1,24 @@
+# --- Setup Registers ---
+addi r3, r0, 7      # 0110_0000_0011_0111 (r3 = 7)
+addi r4, r0, 5      # 0110_0000_0100_0101 (r4 = 5)
+
+# --- Arithmetic ---
+sub  r5, r3, r4     # 0001_0011_0100_0101 (r5 = 2)
+sw   r5, 4(r0)      # 0101_0000_0101_0100 (Store 2 at Mem[4])
+add  r5, r3, r4     # 0000_0011_0100_0101 (r5 = 12)
+sw   r5, 8(r0)      # 0101_0000_0101_1000 (Store 12 at Mem[8])
+
+# --- Memory Access & Pointer Logic ---
+addi r2, r0, 2      # 0110_0000_0010_0010 (r2 = 2 for offset test)
+lw   r3, 2(r2)      # 0100_0010_0011_0010 (Load from Mem[4] -> r3=2)
+lw   r4, 6(r2)      # 0100_0010_0100_0110 (Load from Mem[8] -> r4=12)
+
+# --- Bitwise Logic ---
+xor  r5, r3, r4     # 0010_0011_0100_0101 (r5 = 2 ^ 12 = 14)
+or   r6, r3, r4     # 0011_0011_0100_0110 (r6 = 2 | 12 = 14)
+addi r1, r0, 15     # 0110_0000_0001_1111 (r1 = 15, max immediate)
+xor  r7, r6, r1     # 0010_0110_0001_0111 (r7 = 14 ^ 15 = 1)
+
+# --- Final Save & Loop ---
+sw   r7, 12(r0)     # 0101_0000_0111_1100 (Store 1 at Mem[12])
+j    0              # 0111_0000_0000_0000 (Jump back to start)
