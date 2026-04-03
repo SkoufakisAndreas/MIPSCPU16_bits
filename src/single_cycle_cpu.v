@@ -84,7 +84,7 @@ module single_cycle (
        .clk(clk), 
        .MemWrite(MemWrite), 
        .MemRead(MemRead), 
-       .addr(ALU_out), 
+       .addr(ALU_out[1:0]), 
        .writeData(readData2), 
        .readData(MemData)
    );
