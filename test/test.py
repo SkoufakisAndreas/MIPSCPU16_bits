@@ -63,7 +63,7 @@ async def test_project(dut):
     # --- EXPECTED VALUES (ALU Results) ---
     # Ενημερωμένα με τις σωστές τιμές βάσει της εκτέλεσης του MIPS
     # [addi, addi, sub, sw, add, sw, addi, lw, lw, xor, or, addi, xor, sw]
-   expected_alu = [7, 5, 2, 3, 12, 2, 2, 2, 3, 14, 14, 1, 15, 1]
+    expected_alu = [7, 5, 2, 3, 12, 2, 2, 2, 3, 14, 14, 1, 15, 1]
 
     # --- EXECUTION & ASSERTIONS LOOP ---
     for i, expected in enumerate(expected_alu):
