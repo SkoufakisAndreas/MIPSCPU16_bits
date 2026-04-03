@@ -64,13 +64,13 @@ module single_cycle (
 
    regfile rf (
        .clk(clk), 
-       .readReg1(rs), 
-       .readReg2(rt), 
+       .readReg1(rs[2:0]),  // Παίρνουμε μόνο τα 3 LSBs
+       .readReg2(rt[2:0]),  // Παίρνουμε μόνο τα 3 LSBs
        .RegWrite(RegWrite), 
        .writeData(writeData_reg), 
        .readData1(readData1), 
        .readData2(readData2), 
-       .writeReg(writeReg)
+       .writeReg(writeReg[2:0]) // Παίρνουμε μόνο τα 3 LSBs
    );
 
    alu alu_unit (
