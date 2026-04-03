@@ -25,7 +25,7 @@ module tt_um_mips_cpu (
   assign uo_out  = cpu_alu_result[7:0];   
   assign uio_out = cpu_alu_result[15:8];  
 
-
+  assign uio_oe  = 8'hFF;
   
   wire _unused = &{ui_in, uio_in, ena, 1'b0};
 
