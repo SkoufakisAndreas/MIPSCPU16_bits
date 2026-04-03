@@ -1,10 +1,10 @@
 module data_mem(input clk,
                 input MemWrite, MemRead,
-                input [3:0] addr,
+                input [2:0] addr,
                 input[15:0] writeData,
                 output reg [15:0] readData);
     
-    reg [15:0] memory [15:0]; // 16 words of 16 bits each
+  reg [15:0] memory [7:0]; // 16 words of 16 bits each
 
     //Asychronous read
     always @(*)
