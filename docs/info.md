@@ -1,20 +1,10 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
-
-Explain how your project works
+This is a 16-bit MIPS-like CPU. It features a single-cycle architecture with a 5-bit register file and supports basic arithmetic and logic operations.
 
 ## How to test
-
-Explain how to use your project
+1. Set the clock frequency to 10MHz.
+2. Observe the output pins (uo_out) which represent the current accumulator value.
+3. Use the input pins to provide external interrupts (if implemented).
 
 ## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Connect 8 LEDs to the output pins to see the CPU's output in binaryy.
