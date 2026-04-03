@@ -1,6 +1,6 @@
 module data_mem(input clk,
                 input MemWrite, MemRead,
-                input [15:0] addr,
+                input [3:0] addr,
                 input[15:0] writeData,
                 output reg [15:0] readData);
     
