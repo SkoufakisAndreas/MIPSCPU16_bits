@@ -36,7 +36,7 @@ module single_cycle (
        .pc_out(pc_out)
    );   
 
-   instruction_memory rom (
+   instruction_memory inst_mem (
        .p_in(pc_out[3:0]),   //Last 4 pcbits since we have only 16 instructions
        .instruction(instruction)
    );
